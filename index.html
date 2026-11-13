@@ -1,0 +1,787 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#073b1b">
+<meta name="description" content="DOBIS Signature — Palm Oil and Pure Honey supplier in Port Harcourt. Retail, wholesale and souvenirs.">
+<title>DOBIS Signature | Pure Goodness, Naturally</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap');
+
+:root {
+  --green:#073b1b;
+  --dark:#032712;
+  --gold:#e8b923;
+  --cream:#fff9ef;
+  --text:#233126;
+  --muted:#758074;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--cream);
+  color:var(--text);
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:min(1160px,92%);margin:auto}
+
+/* TOP BAR */
+.topbar{
+  background:var(--dark);
+  color:white;
+  padding:10px 4%;
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+  font-size:12px;
+}
+.topbar a{color:#f5d77a}
+
+/* NAVIGATION */
+header{
+  background:#fffdf7;
+  position:sticky;
+  top:0;
+  z-index:20;
+  box-shadow:0 3px 18px #0000000c;
+}
+.nav{
+  min-height:83px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  color:var(--green);
+}
+.logo-mark{
+  width:49px;
+  height:49px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:linear-gradient(140deg,#f5d64b,#159044);
+  border:3px solid var(--gold);
+  font-size:27px;
+}
+.logo-name{font-size:25px;font-weight:800;letter-spacing:-1px}
+.logo-sub{font-size:11px;font-weight:700;display:block}
+.navlinks{display:flex;gap:23px;font-size:13px;font-weight:700}
+.navlinks a:hover{color:#b58a14}
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:14px 22px;
+  border-radius:40px;
+  background:var(--green);
+  color:white;
+  font-size:13px;
+  font-weight:800;
+  transition:.25s;
+}
+.btn:hover{transform:translateY(-3px);background:#12572b}
+.btn.gold{background:var(--gold);color:var(--dark)}
+.btn.gold:hover{background:#f6ce47}
+
+/* HERO */
+.hero{
+  background:
+  radial-gradient(ellipse at 75% 45%,#24622e 0%,transparent 50%),
+  linear-gradient(120deg,#032610,#0b4920);
+  color:white;
+  overflow:hidden;
+}
+.hero-inner{
+  min-height:540px;
+  display:grid;
+  grid-template-columns:1fr 1.05fr;
+  gap:25px;
+  align-items:center;
+  padding-top:55px;
+  padding-bottom:55px;
+}
+.eyebrow{
+  background:var(--gold);
+  color:#142c13;
+  border-radius:30px;
+  padding:9px 16px;
+  display:inline-block;
+  font-size:11px;
+  font-weight:800;
+  letter-spacing:1px;
+  text-transform:uppercase;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(42px,5vw,68px);
+  line-height:1.05;
+  margin:22px 0 8px;
+  letter-spacing:-1.5px;
+}
+.hero h1 span{color:var(--gold)}
+.hero .tagline{
+  font-family:'Playfair Display',serif;
+  font-size:25px;
+  font-style:italic;
+  color:#ffe7a2;
+  margin-bottom:20px;
+}
+.hero p{
+  color:#e0eadd;
+  line-height:1.8;
+  font-size:15px;
+  max-width:480px;
+}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+/* CUSTOM PRODUCT ILLUSTRATIONS */
+.showcase{
+  min-height:370px;
+  display:flex;
+  align-items:end;
+  justify-content:center;
+  gap:15px;
+  padding:35px 15px 20px;
+  border-radius:28px;
+  background:
+  radial-gradient(ellipse at 50% 75%,#d8a94e55,transparent 55%),
+  linear-gradient(145deg,#ffffff18,#ffffff05);
+  border:1px solid #ffffff22;
+  position:relative;
+}
+.showcase:before{
+  content:"";
+  position:absolute;
+  bottom:15px;
+  left:5%;
+  width:90%;
+  height:12px;
+  border-radius:50%;
+  background:#0005;
+  filter:blur(8px);
+}
+.package{
+  position:relative;
+  z-index:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+.bottle{
+  width:94px;
+  height:195px;
+  border-radius:17px 17px 12px 12px;
+  position:relative;
+  background:linear-gradient(90deg,#bd3c0b,#f17a18 35%,#c8440b 85%);
+  border:3px solid #e99a30;
+  box-shadow:inset 8px 0 12px #ffffff40,8px 12px 20px #0005;
+}
+.bottle:before{
+  content:"";
+  position:absolute;
+  width:34px;
+  height:30px;
+  top:-27px;
+  left:27px;
+  border-radius:5px 5px 0 0;
+  background:repeating-linear-gradient(90deg,#f7c52d 0 5px,#d69b10 5px 8px);
+}
+.bottle .label{
+  position:absolute;
+  top:57px;
+  left:5px;
+  right:5px;
+  height:84px;
+  border-radius:6px;
+  background:linear-gradient(130deg,#fef5d9,#fff);
+  color:var(--green);
+  display:grid;
+  place-content:center;
+  text-align:center;
+  border:2px solid var(--gold);
+}
+.label b{font-size:16px;letter-spacing:1px}
+.label small{font-size:8px;font-weight:800}
+.label span{font-size:9px;margin-top:5px}
+.bottle.large{width:108px;height:225px}
+.bottle.small{width:78px;height:170px}
+.honey-jar{
+  width:105px;
+  height:145px;
+  border-radius:18px 18px 22px 22px;
+  background:linear-gradient(90deg,#a9570a,#f6a925 40%,#c8780b);
+  border:3px solid #e8b75a;
+  box-shadow:inset 8px 0 12px #fff6,8px 12px 20px #0005;
+  position:relative;
+}
+.honey-jar:before{
+  content:"";
+  position:absolute;
+  width:110px;
+  height:17px;
+  top:-19px;
+  left:-5px;
+  border-radius:5px;
+  background:repeating-linear-gradient(90deg,#e9c45e 0 7px,#b88a32 7px 10px);
+}
+.honey-jar .label{
+  top:39px;
+  height:75px;
+}
+.honey-jar .label b{font-size:15px}
+.pack-caption{
+  color:#fff1c5;
+  font-size:11px;
+  font-weight:800;
+  margin-top:12px;
+}
+.badge-natural{
+  position:absolute;
+  top:15px;
+  right:15px;
+  background:var(--gold);
+  color:var(--dark);
+  width:83px;
+  height:83px;
+  border-radius:50%;
+  display:grid;
+  place-content:center;
+  text-align:center;
+  font-size:11px;
+  font-weight:900;
+  border:4px double #fff3b5;
+  transform:rotate(8deg);
+}
+
+/* SECTIONS */
+section{padding:75px 0}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title small{
+  color:#ad8214;
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.section-title h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(30px,4vw,43px);
+  color:var(--green);
+  margin:10px 0;
+}
+.section-title p{color:var(--muted);font-size:14px}
+
+/* PRODUCTS */
+.products{background:#fffdf8}
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+}
+.product-card{
+  background:white;
+  border:1px solid #eee2ce;
+  border-radius:20px;
+  padding:20px;
+  transition:.25s;
+  box-shadow:0 8px 25px #00000008;
+}
+.product-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 15px 35px #00000013;
+}
+.product-picture{
+  height:170px;
+  background:linear-gradient(140deg,#fff5d9,#f4e6cb);
+  border-radius:15px;
+  display:flex;
+  justify-content:center;
+  align-items:end;
+  gap:10px;
+  overflow:hidden;
+  padding:15px;
+  margin-bottom:19px;
+}
+.mini-bottle{
+  width:52px;
+  height:105px;
+  position:relative;
+  border-radius:10px 10px 7px 7px;
+  background:linear-gradient(90deg,#ad390d,#ed7719,#b53a0a);
+  border:2px solid #d99434;
+  box-shadow:inset 6px 0 7px #fff5;
+}
+.mini-bottle:before{
+  content:"";
+  position:absolute;
+  top:-14px;left:14px;
+  width:20px;height:15px;
+  background:#e8b82d;
+  border-radius:3px 3px 0 0;
+}
+.mini-bottle:after{
+  content:"DOBIS";
+  position:absolute;
+  top:38px;left:3px;right:3px;
+  background:#fff9e9;
+  color:var(--green);
+  text-align:center;
+  font-size:9px;
+  font-weight:900;
+  padding:10px 0;
+}
+.mini-bottle.tall{height:130px;width:61px}
+.mini-bottle.short{height:85px;width:48px}
+.mini-jar{
+  width:73px;height:94px;
+  position:relative;
+  border-radius:13px 13px 17px 17px;
+  background:linear-gradient(90deg,#b5670b,#f7b32b,#b76c0a);
+  border:2px solid #e6b65a;
+  box-shadow:inset 6px 0 7px #fff5;
+}
+.mini-jar:before{
+  content:"";position:absolute;top:-12px;left:-3px;
+  width:73px;height:11px;background:#d8b55a;border-radius:4px;
+}
+.mini-jar:after{
+  content:"DOBIS";position:absolute;top:35px;left:4px;right:4px;
+  text-align:center;background:#fff9e9;color:var(--green);
+  font-size:9px;font-weight:900;padding:9px 0;
+}
+.product-type{
+  color:#ae8211;font-size:10px;font-weight:900;
+  letter-spacing:1px;text-transform:uppercase;
+}
+.product-card h3{color:var(--green);font-size:20px;margin:7px 0}
+.product-card p{font-size:13px;color:var(--muted);line-height:1.6;min-height:42px}
+.product-card .btn{width:100%;margin-top:18px;padding:12px}
+
+/* FEATURES */
+.features{background:#f2f5e9}
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:17px;
+}
+.feature{
+  background:white;
+  border:1px solid #e2e9da;
+  padding:25px 15px;
+  text-align:center;
+  border-radius:17px;
+}
+.feature-icon{font-size:31px}
+.feature h3{color:var(--green);font-size:15px;margin:12px 0 7px}
+.feature p{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* WHOLESALE */
+.wholesale{
+  background:linear-gradient(120deg,#073b1b,#105628);
+  color:white;
+}
+.wholesale-inner{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:35px;
+  align-items:center;
+}
+.wholesale h2{
+  font-family:'Playfair Display',serif;
+  font-size:40px;margin:15px 0;
+}
+.wholesale p{color:#e1eddf;line-height:1.8;margin-bottom:22px}
+.gift-panel{
+  background:#fff9ed;
+  color:var(--green);
+  padding:30px;
+  border-radius:20px;
+}
+.gift-art{
+  display:flex;justify-content:center;gap:12px;
+  align-items:end;height:105px;margin-bottom:20px;
+}
+.gift-box{
+  width:92px;height:75px;background:#b98a48;
+  border:3px solid #e9c46b;position:relative;
+  display:grid;place-items:center;color:white;
+  font-size:12px;font-weight:900;
+  box-shadow:4px 8px 15px #0002;
+}
+.gift-box:before{
+  content:"";position:absolute;left:40px;top:-12px;
+  width:10px;height:85px;background:#e7c75d;
+}
+.gift-box:after{
+  content:"";position:absolute;left:23px;top:-22px;
+  width:40px;height:25px;border:7px solid #e7c75d;
+  border-radius:50%;
+}
+.gift-panel h3{font-family:'Playfair Display',serif;font-size:25px}
+.gift-panel p{color:var(--muted);font-size:13px;margin:12px 0}
+
+/* CONTACT */
+.contact{background:#fffdf8}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-card{
+  background:#f6f1e5;
+  border:1px solid #e8dfce;
+  border-radius:20px;padding:27px;
+}
+.contact-card h3{color:var(--green);margin-bottom:20px}
+.contact-item{display:flex;gap:13px;margin:18px 0;line-height:1.6;font-size:14px}
+.contact-item span{font-size:21px}
+.contact-item b{color:var(--green)}
+.contact-card p{font-size:14px;line-height:1.8;color:var(--muted);margin-bottom:20px}
+
+/* FOOTER */
+footer{background:#022710;color:white;padding:40px 0 20px}
+.footer-inner{
+  display:flex;justify-content:space-between;
+  gap:25px;flex-wrap:wrap;
+}
+.footer-brand h2{font-size:26px}
+.footer-brand p{color:#c4d8c2;font-size:12px;margin-top:8px}
+.footer-links{display:flex;gap:20px;flex-wrap:wrap;font-size:13px}
+.footer-links a:hover{color:var(--gold)}
+.copyright{
+  border-top:1px solid #ffffff25;
+  margin-top:28px;padding-top:17px;
+  font-size:11px;color:#b7cbb7;
+  display:flex;justify-content:space-between;gap:10px;
+}
+
+/* MOBILE */
+.mobile-order{display:none}
+@media(max-width:850px){
+  .navlinks{display:none}
+  .hero-inner{grid-template-columns:1fr;padding-top:45px}
+  .showcase{max-width:580px;width:100%;margin:15px auto 0}
+  .wholesale-inner{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+  .topbar{justify-content:center;text-align:center}
+  .nav{min-height:72px}
+  .logo-name{font-size:21px}
+  .nav>.btn{font-size:11px;padding:12px}
+  .product-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+  .product-card{padding:12px}
+  .product-picture{height:125px;gap:5px;padding:10px}
+  .mini-bottle{transform:scale(.85);transform-origin:bottom}
+  .product-card h3{font-size:16px}
+  .product-card p{font-size:11px;min-height:55px}
+  .product-card .btn{font-size:11px;padding:11px 5px}
+  .feature-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-grid{grid-template-columns:1fr}
+  section{padding:55px 0}
+  .hero h1{font-size:46px}
+  .showcase{min-height:290px;gap:8px;padding:25px 8px}
+  .bottle{transform:scale(.85);transform-origin:bottom}
+  .bottle.large{transform:scale(.9);transform-origin:bottom}
+  .honey-jar{transform:scale(.85);transform-origin:bottom}
+  .badge-natural{width:67px;height:67px;font-size:9px}
+  .mobile-order{display:block;position:fixed;bottom:12px;left:12px;right:12px;z-index:30}
+  .mobile-order .btn{width:100%;box-shadow:0 8px 25px #0005}
+  footer{padding-bottom:85px}
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  <span>📍 Port Harcourt, Rivers State, Nigeria</span>
+  <span>✉ <a href="mailto:dobissignature22@gmail.com">dobissignature22@gmail.com</a> &nbsp; | &nbsp; ☎ <a href="https://wa.me/2349014336784">+234 901 433 6784</a></span>
+</div>
+
+<header>
+<nav class="nav container">
+  <a href="#home" class="logo">
+    <span class="logo-mark">🌿</span>
+    <span><span class="logo-name">DOBIS</span>
+    <span class="logo-sub">SIGNATURE · PALM OIL & HONEY</span></span>
+  </a>
+  <div class="navlinks">
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#wholesale">Wholesale</a>
+    <a href="#souvenirs">Souvenirs</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a class="btn" href="https://wa.me/2349014336784?text=Hello%20DOBIS%20Signature%2C%20I%27d%20like%20to%20make%20an%20enquiry.">WhatsApp Us ↗</a>
+</nav>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" id="home">
+<div class="container hero-inner">
+  <div>
+    <span class="eyebrow">Quality You Can Trust</span>
+    <h1>Pure Goodness,<br><span>Naturally.</span></h1>
+    <div class="tagline">Palm Oil & Pure Honey</div>
+    <p>
+      Welcome to DOBIS Signature — your trusted destination
+      for quality palm oil and pure honey in Port Harcourt.
+      Shop for your home, stock your business, or make
+      every celebration special with our souvenir packages.
+    </p>
+    <div class="hero-actions">
+      <a href="#products" class="btn gold">Explore Products ↓</a>
+      <a href="https://wa.me/2349014336784" class="btn" style="border:1px solid #ffffff66">Order on WhatsApp</a>
+    </div>
+  </div>
+
+  <div class="showcase">
+    <div class="badge-natural">DOBIS<br>QUALITY<br>SELECTION</div>
+    <div class="package">
+      <div class="bottle small"><div class="label"><b>DOBIS</b><small>PALM OIL</small><span>Premium</span></div></div>
+      <div class="pack-caption">Palm Oil</div>
+    </div>
+    <div class="package">
+      <div class="bottle large"><div class="label"><b>DOBIS</b><small>PALM OIL</small><span>Signature</span></div></div>
+      <div class="pack-caption">Family Packs</div>
+    </div>
+    <div class="package">
+      <div class="honey-jar"><div class="label"><b>DOBIS</b><small>PURE HONEY</small><span>Golden Goodness</span></div></div>
+      <div class="pack-caption">Pure Honey</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+<div class="container">
+  <div class="section-title">
+    <small>Explore our collection</small>
+    <h2>Our Signature Products</h2>
+    <p>Choose your preferred size and order directly from our WhatsApp catalogue.</p>
+  </div>
+
+  <div class="product-grid">
+
+    <article class="product-card">
+      <div class="product-picture">
+        <div class="mini-bottle"></div><div class="mini-bottle tall"></div><div class="mini-bottle"></div>
+      </div>
+      <span class="product-type">Palm Oil · Bulk Pack</span>
+      <h3>25L Palm Oil</h3>
+      <p>A generous pack for households, restaurants and bulk buyers.</p>
+      <a class="btn" href="https://wa.me/p/28189939963989090/2349014336784">View Catalogue ↗</a>
+    </article>
+
+    <article class="product-card">
+      <div class="product-picture">
+        <div class="mini-jar"></div>
+        <div style="font-size:39px">🍯</div>
+      </div>
+      <span class="product-type">Pure Honey</span>
+      <h3>50cl Honey</h3>
+      <p>A convenient honey size for everyday use and gifting.</p>
+      <a class="btn" href="https://wa.me/p/28544841141816440/2349014336784">View Catalogue ↗</a>
+    </article>
+
+    <article class="product-card">
+      <div class="product-picture">
+        <div class="mini-jar" style="transform:scale(.85)"></div>
+        <div style="font-size:35px">🍯</div>
+      </div>
+      <span class="product-type">Pure Honey</span>
+      <h3>35cl Pure Honey</h3>
+      <p>A compact bottle for your pantry or a thoughtful gift.</p>
+      <a class="btn" href="https://wa.me/p/27901421866152393/2349014336784">View Catalogue ↗</a>
+    </article>
+
+    <article class="product-card">
+      <div class="product-picture">
+        <div class="mini-bottle short"></div>
+        <div class="mini-bottle"></div>
+      </div>
+      <span class="product-type">Palm Oil</span>
+      <h3>3L Palm Oil</h3>
+      <p>A practical pack for everyday cooking at home.</p>
+      <a class="btn" href="https://wa.me/p/28240617712221879/2349014336784">View Catalogue ↗</a>
+    </article>
+
+    <article class="product-card">
+      <div class="product-picture">
+        <div class="mini-bottle"></div><div class="mini-bottle tall"></div><div class="mini-bottle"></div>
+      </div>
+      <span class="product-type">Palm Oil · Bulk Pack</span>
+      <h3>10L Palm Oil</h3>
+      <p>Ideal for regular household use and food businesses.</p>
+      <a class="btn" href="https://wa.me/p/27978275765164143/2349014336784">View Catalogue ↗</a>
+    </article>
+
+    <article class="product-card">
+      <div class="product-picture">
+        <div class="mini-jar" style="transform:scale(1.1)"></div>
+        <div style="font-size:35px">🍯</div>
+      </div>
+      <span class="product-type">Pure Honey</span>
+      <h3>75cl Pure Honey</h3>
+      <p>A generous bottle for homes and honey lovers.</p>
+      <a class="btn" href="https://wa.me/p/37900324659613311/2349014336784">View Catalogue ↗</a>
+    </article>
+
+    <article class="product-card">
+      <div class="product-picture">
+        <div class="mini-bottle short"></div><div class="mini-bottle"></div>
+      </div>
+      <span class="product-type">Palm Oil</span>
+      <h3>5L Palm Oil</h3>
+      <p>A versatile size for households and small businesses.</p>
+      <a class="btn" href="https://wa.me/p/27925738893757065/2349014336784">View Catalogue ↗</a>
+    </article>
+
+    <article class="product-card">
+      <div class="product-picture">
+        <div class="mini-jar" style="transform:scale(1.15)"></div>
+        <div style="font-size:37px">🍯</div>
+      </div>
+      <span class="product-type">Pure Honey</span>
+      <h3>1L Pure Honey</h3>
+      <p>A larger bottle for customers who want more.</p>
+      <a class="btn" href="https://wa.me/p/27334692832875941/2349014336784">View Catalogue ↗</a>
+    </article>
+
+    <article class="product-card">
+      <div class="product-picture">
+        <div class="mini-bottle short"></div><div class="mini-bottle"></div><div class="mini-bottle tall"></div>
+      </div>
+      <span class="product-type">Palm Oil · Multiple Sizes</span>
+      <h3>1L & 2L Palm Oil</h3>
+      <p>Convenient options for your everyday kitchen needs.</p>
+      <a class="btn" href="https://wa.me/p/38004710142478189/2349014336784">View Catalogue ↗</a>
+    </article>
+
+  </div>
+</div>
+</section>
+
+<!-- BENEFITS -->
+<section class="features" id="about">
+<div class="container">
+  <div class="section-title">
+    <small>The DOBIS promise</small>
+    <h2>Why Choose DOBIS?</h2>
+    <p>Quality products and service for every kind of customer.</p>
+  </div>
+  <div class="feature-grid">
+    <div class="feature"><div class="feature-icon">🌿</div><h3>Quality Products</h3><p>Palm oil and pure honey supplied with care.</p></div>
+    <div class="feature"><div class="feature-icon">🤝</div><h3>Retail & Wholesale</h3><p>Options for personal use and business supply.</p></div>
+    <div class="feature"><div class="feature-icon">🎁</div><h3>Souvenir Packages</h3><p>Special packages for gifting and occasions.</p></div>
+    <div class="feature"><div class="feature-icon">🚚</div><h3>Delivery Enquiries</h3><p>Contact us to discuss your delivery needs.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- WHOLESALE AND SOUVENIRS -->
+<section class="wholesale" id="wholesale">
+<div class="container wholesale-inner">
+  <div>
+    <span class="eyebrow">For Homes & Businesses</span>
+    <h2>Buying in Bulk?</h2>
+    <p>
+      DOBIS Signature welcomes retail and wholesale enquiries.
+      Whether you are buying for your home, restaurant, hotel,
+      catering business or shop, contact us to discuss the
+      product sizes, availability and pricing you need.
+    </p>
+    <a class="btn gold" href="https://wa.me/2349014336784?text=Hello%20DOBIS%20Signature%2C%20I%27m%20interested%20in%20wholesale%20pricing.">Request Wholesale Pricing ↗</a>
+  </div>
+
+  <div class="gift-panel" id="souvenirs">
+    <div class="gift-art">
+      <div class="gift-box">DOBIS</div>
+      <div class="mini-jar"></div>
+    </div>
+    <h3>Thoughtful Gifts. Beautiful Memories.</h3>
+    <p>Make your celebrations special with palm oil and honey souvenir package enquiries.</p>
+    <a class="btn" href="https://wa.me/2349014336784?text=Hello%20DOBIS%20Signature%2C%20I%27d%20like%20to%20enquire%20about%20souvenir%20packages.">Enquire About Souvenirs ↗</a>
+  </div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+<div class="container">
+  <div class="section-title">
+    <small>We'd love to hear from you</small>
+    <h2>Contact DOBIS Signature</h2>
+    <p>For orders, product enquiries, wholesale and souvenirs.</p>
+  </div>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <h3>Business Information</h3>
+      <div class="contact-item"><span>📍</span><div><b>Location</b><br>Port Harcourt, Rivers State, Nigeria</div></div>
+      <div class="contact-item"><span>✉️</span><div><b>Email</b><br><a href="mailto:dobissignature22@gmail.com">dobissignature22@gmail.com</a></div></div>
+      <div class="contact-item"><span>📱</span><div><b>WhatsApp / Phone</b><br><a href="https://wa.me/2349014336784">+234 901 433 6784</a></div></div>
+      <div class="contact-item"><span>🕒</span><div><b>Opening Information</b><br>Open 24 hours (as listed on business profile)</div></div>
+    </div>
+
+    <div class="contact-card">
+      <h3>Let's Get Your Order Started</h3>
+      <p>
+        Need today's prices, available quantities or delivery details?
+        Send DOBIS Signature a WhatsApp message and make your enquiry directly.
+      </p>
+      <a class="btn" href="https://wa.me/2349014336784?text=Hello%20DOBIS%20Signature%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20make%20an%20enquiry.">Chat With Us on WhatsApp ↗</a>
+      <p style="margin-top:20px;font-size:12px">Facebook: DOBIS PalmOil & Honey</p>
+    </div>
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer>
+<div class="container">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <h2>DOBIS Signature</h2>
+      <p>Pure Goodness, Naturally.<br>Palm Oil & Pure Honey · Port Harcourt</p>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#wholesale">Wholesale</a>
+      <a href="#souvenirs">Souvenirs</a>
+      <a href="#contact">Contact</a>
+      <a href="mailto:dobissignature22@gmail.com">Email Us</a>
+    </div>
+  </div>
+  <div class="copyright">
+    <span>© <span id="year"></span> DOBIS Signature. All rights reserved.</span>
+    <span>Made with care in Nigeria 🇳🇬</span>
+  </div>
+</div>
+</footer>
+
+<div class="mobile-order">
+  <a class="btn gold" href="https://wa.me/2349014336784?text=Hello%20DOBIS%20Signature%2C%20I%27d%20like%20to%20place%20an%20order.">Order on WhatsApp ↗</a>
+</div>
+
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+
